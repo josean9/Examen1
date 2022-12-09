@@ -3,10 +3,7 @@ patron = [
           ["D","E","F"],
           ["G","H","I"]
     ]
+print(patron[0][1])
 def posibilidadesPatron(LetraInicial, patron):
-    posibilidades = []
-    for i in patron:
-        for j in i:
-            if j == LetraInicial:
-                posibilidades.append((i, j))
-print(posibilidadesPatron(0, patron))
+
+print(posibilidadesPatron(patron[0][1], patron))
