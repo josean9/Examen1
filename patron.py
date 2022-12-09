@@ -1,6 +1,9 @@
-patron = [["A","B","C"]
-          ["D","E","F"]
-          ["G","H","I"]]
+patron = [
+          ["A", "B", "C"],
+          ["D","E","F"],
+          ["G","H","I"]
+    ]
+print(patron)
 def posibilidades_patron(inicial, patron):
     posibilidades = []
     for i in range(inicial, len(patron)):
@@ -29,7 +32,6 @@ def es_valido(patron, fila, columna, numero):
         for j in range(3):
             if patron[(fila // 3) * 3 + i][(columna // 3) * 3 + j] == numero:
                 return False
-    return True
-print(patron)
+            else:
+                return True
 resolver_patron(patron, posibilidades_patron(0, patron))
-print(patron)
