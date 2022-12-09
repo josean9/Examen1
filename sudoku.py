@@ -6,10 +6,11 @@ sudoku1 = [[5, 0, 0, 0, 4, 0, 0, 0, 9],
            [3, 0, 0, 0, 0, 0, 0, 0, 1],
            [9, 0, 0, 0, 6, 0, 0, 0, 2]
            [0, 1, 4, 0, 3, 0, 0, 5, 7],
-           [0, 0, 5, 0, 8, 7, 0, 0, 0],]
+           [0, 0, 5, 0, 8, 7, 0, 0, 0]]
+
 def resolver_sudokus(sudoku):
-    for i in range(9):
-        for j in range(9):
+    for i in range(len(sudoku)):
+        for j in range(len(sudoku[i])):
             if sudoku[i][j] == 0:
                 for k in range(1, 10):
                     if es_valido(sudoku, i, j, k):
@@ -17,9 +18,9 @@ def resolver_sudokus(sudoku):
                         resolver_sudokus(sudoku)
                         sudoku[i][j] = 0
                 return sudoku
-                
+    print(sudoku)
 def es_valido(sudoku, fila, columna, numero):
-    for i in range(9):
+    for i in range(len(sudoku)):
         if sudoku[fila][i] == numero:
             return False
         if sudoku[i][columna] == numero:
